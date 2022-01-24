@@ -31,29 +31,39 @@ void TutorialApplication::createScene(void)
 {
     mSceneMgr->setAmbientLight(Ogre::ColourValue(0.5,0.5,0.5));
 
-    Ogre::Entity* ogreEntity1 = mSceneMgr->createEntity("ogrehead.mesh");
+    Ogre::Entity* ogreEntity1 = mSceneMgr->createEntity("cg47.mesh");
     Ogre::SceneNode* ogreNode1 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
 	ogreNode1->attachObject(ogreEntity1);
 
 	Ogre::Light* light = mSceneMgr->createLight("MainLight");
 	light->setPosition(20, 80, 50);
-	mCamera->setPosition(0, 47, 222);
+	mCamera->setPosition(0, 120, 500);
 
-	Ogre::Entity* ogreEntity2 = mSceneMgr->createEntity("ogrehead.mesh");
-	Ogre::SceneNode* ogreNode2 = mSceneMgr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(84,48,0));
+	Ogre::Entity* ogreEntity2 = mSceneMgr->createEntity("cg47.mesh");
+	Ogre::SceneNode* ogreNode2 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+	ogreNode2->setPosition(-200,0,0);
+	ogreNode2->yaw(Ogre::Degree(90));
 	ogreNode2->attachObject(ogreEntity2);
 
-	Ogre::Entity* ogreEntity3 = mSceneMgr->createEntity("ogrehead.mesh");
+	Ogre::Entity* ogreEntity3 = mSceneMgr->createEntity("cg47.mesh");
 	Ogre::SceneNode* ogreNode3 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
-	ogreNode3->setPosition(0,104,0);
-	ogreNode3->setScale(2, 1.2, 1);
+	ogreNode3->setPosition(200,0,0);
+	ogreNode3->yaw(Ogre::Degree(-90));
 	ogreNode3->attachObject(ogreEntity3);
 
-	Ogre::Entity* ogreEntity4 = mSceneMgr->createEntity("ogrehead.mesh");
+	Ogre::Entity* ogreEntity4 = mSceneMgr->createEntity("cg47.mesh");
 	Ogre::SceneNode* ogreNode4 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
-	ogreNode4->setPosition(-85,48,0);
-	ogreNode4->roll(Ogre::Degree(-90));
+	ogreNode4->setPosition(-100,100,0);
+	ogreNode4->yaw(Ogre::Degree(180));
+	ogreNode4->setScale(1, -1, 1);
 	ogreNode4->attachObject(ogreEntity4);
+
+	Ogre::Entity* ogreEntity5 = mSceneMgr->createEntity("cg47.mesh");
+		Ogre::SceneNode* ogreNode5 = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+		ogreNode5->setPosition(100,100,0);
+		ogreNode5->yaw(Ogre::Degree(270));
+		ogreNode5->setScale(1, 2, 1);
+		ogreNode5->attachObject(ogreEntity5);
 
 
 
